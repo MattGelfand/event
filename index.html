@@ -5,25 +5,26 @@
 <title>party</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel='stylesheet' href='css/style.css'/>
-<script src="//use.typekit.net/gyk3efg.js"></script>
-<script>try{Typekit.load();}catch(e){}</script>
+<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
 <!--remember to change favicon-->
 </head>
 <body>
-	<input type="radio" id="sidebartoggler" name="" value="">
+	<input type="radio" id="sidebartoggler" name="toggle-icon" value="sidebar-open">
+	<input type="radio" id="sidebartoggler-close" name="toggle-icon" value="sidebar-close">
  	
 	<div class="container" id="top">
 		<label for="sidebartoggler" class="toggle">☰</label>
-	
-		<div class="home-container">
-			<header>
-				<h1 class="hero-header animated fadeInUp">Love<span class="add-weight">burger</span></h1>
+		<section class="main">
+			<header class="contain">
+				<h1 class="section-header caps">Loveburger</h1>
+				<h2 class="subhead caps">Cooking With Love</h2>
 			</header>
-		</div>
+		</section><!--main-->
 
 		<nav class="sidebar">
-			<ul>
-				<label for="sidebartoggler-close" class="toggle-close">×</label>	
+			<label for="sidebartoggler-close" class="toggle-close">
+				<span class="toggle-icon-contain">✖</span></label>
+			<ul class="sidebar-inner">	
 				<li><a href="">Tour Dates</a></li>
 				<li><a href="">Video</a></li>
 				<li><a href="">Soundcloud</a></li>

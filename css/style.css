@@ -84,58 +84,151 @@ NORMALIZE.css
 /*===================================== MAIN MOBILE STYLES ======================================*/
 
 	html { 
-   		background: url('../img/party-small.jpg') 0 0 no-repeat;
-  		background-size: cover;
-  		min-height: 100vh;
-  		font-family: "tablet-gothic";
-   
+   		font-family: 'Oswald', sans-serif;
 	}
 
 	.container {
 		margin: 0 auto;
-		position: relative;
-		
 	}
 
+	/* Lax */
+
+
+
+	/* Primary Styles */
+
+	.main {
+		height: 400px;
+	}
+
+
+	header {
+		position: relative;
+		top: 50%;
+		-webkit-transform:translateY(-50%);
+		text-align: center;
+	}
 
 	/* Text Styles */
 
-	header h1 {
-		text-transform: uppercase;
-		color: rgba(255,255,255, .4);
+	.section-header {
+		color: #F50A54;
  		text-align: center;
-		letter-spacing: 10px;	
-		position: relative;
-		top: 50%;
 		font-weight: 200;
-		-webkit-transform: translateY(-50%);
-		-moz-transform: translateY(-50%);
-		-ms-transform: translateY(-50%);
-		-o-transform: translateY(-50%);
-		transform: translateY(-50%);
+		letter-spacing: 4px;
 	}
 
-	.sidebar li {
-		font-size: 4em;
-		font-weight: 100;
-		letter-spacing: -4px;
+	.subhead {
+		font-weight: 200;
+		font-size: .8em;
+		letter-spacing: 3.2px;
+		opacity: .4;
 	}
 
-	.sidebar a {
-		color: #222;
-	}
 
 	/* Misc. */
 
 	.contain {
-		padding: 0 1em;
+		margin: 0 auto;
+		max-width: 275px;
 	}
 
-	.add-weight {
+	.caps {
+		text-transform: uppercase;
+	}
+
+	/* Toggle */
+
+	.toggle {
+		text-decoration: none;
+		font-size: 30px;
+		color: #F50A54;
+		position: fixed;
+		top: 10px;
+		left: 30px;
+		z-index: 1;
+		cursor: pointer;
+	}
+
+	.toggle-close {
+		text-decoration: none;
+		font-size: 30px;
+		color: #fff;
+		z-index: 1;
+		position: absolute;
+		cursor: pointer;
+	}
+
+	.toggle-icon-contain {
+		position: fixed;
+		top: 1%;
+		left: 45.5%;
+	}
+
+	.sidebar {
+		position: fixed;
+		top: -100%;
+		width: 100%;
+		height: 100%;
+		padding: 1.6em;
+		background: #F50A54;
+		z-index: 0;
+
+		-webkit-transition: right .15s ease-in;
+		-moz-transition: right .15s ease-in;
+		transition: right .15s ease-in; 
+	}
+
+	.sidebar-inner {
+		padding-top: 1.6em;
+		position: relative;
+	}
+
+	.sidebar li {
+		font-size: .7em;
 		font-weight: 800;
-		color: rgba(255,255,255, .9);
-
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		margin: 3.2em 0;
+		text-align: center;
 	}
+
+	.sidebar a {
+		color: #fff;
+	}
+
+	#sidebartoggler, #sidebartoggler-close {
+		display: none; }
+
+	#sidebartoggler:checked ~ .container .toggle {
+		display: none;
+	}
+
+	#sidebartoggler:checked ~ .container .sidebar {
+		top: 0; 
+		-webkit-transition: all .15s ease-in;
+		-moz-transition: all .15s ease-in;
+		transition: all .15s ease-in; 
+	}
+
+	#sidebartoggler:checked ~ .container .main {
+		opacity: .1;
+	}
+
+	#sidebartoggler-close:checked ~ .container .sidebar {
+		top: -100%;
+		-webkit-transition: all .15s ease-in;
+		-moz-transition: all .15s ease-in;
+		transition: all .15s ease-in;   
+	}
+
+	#sidebartoggler:checked ~ .container .main {
+		padding-top: 50%;
+		-webkit-transition: all .15s ease-in;
+		-moz-transition: all .15s ease-in;
+		transition: all .15s ease-in;   
+	}
+
 
 
 
@@ -150,8 +243,7 @@ NORMALIZE.css
 @media (min-width: 40rem) {
 
 	html {	
-	background: url('../img/party.jpg') 60% 50% no-repeat;
-	background-attachment: fixed;
+
 	}
   
 	.column {
@@ -189,83 +281,110 @@ NORMALIZE.css
 		margin: 0 auto;
 	}
 
+	.sidebar {
+		top: 0px;
+		bottom: 0px;
+		left: -50%;
+		width: 50%;
+		height: 100%;
+	}
+
+	.sidebar li {
+		text-align: right;
+		font-size: 1.4em;
+		font-weight: 300;
+	}
+
+	.sidebar a:hover {
+		color: #F50A54;
+		background: #fff;
+		padding: .8em;
+	}
+
+	#sidebartoggler:checked ~ .container .sidebar {
+		left: 0; 
+	}
+
+	#sidebartoggler-close:checked ~ .container .sidebar {
+		left: -50%;
+	}
+
+	#sidebartoggler:checked ~ .container .main {
+		padding-left: 50%; 
+		padding-top: 0;
+	}
+
+	#sidebartoggler-close:checked ~ .container .main {
+		-webkit-transition: all .15s ease-in;
+		-moz-transition: all .15s ease-in;
+		transition: all .15s ease-in; 
+	}
+
+	.toggle-icon-contain {
+		position: static;
+	}
+
+	.main {
+		height: 800px;
+	}
+
+	/* Text Styles */
+
+	.subhead {
+		font-size: 1.5em;
+		letter-spacing: 10px;
+	}
+
 }
 	
 
-
-/* Larger screen breakpoint (815px) */
+/* Medium screen breakpoint (800px) */
 @media (min-width: 50rem) {	
 	.contain {
 		max-width: 890px;
 		margin: 0 auto;
 	}
+
+	.subhead {
+		font-size: 1.8em;
+	}
  
 }
 
 
-/* Larger screen breakpoint (960px) */
+/* Larger screen breakpoint (1120px) */
 @media (min-width: 70rem) {	
 	.contain {
-		max-width: 1160px;
+		max-width: 1500px;
 		margin: 0 auto;
 	}
 
-	.home-container {
-		position: relative;
-		max-width: 600px;
+	.section-header {
+		font-weight: 600;
 	}
 
-	.toggle {
-		text-decoration: none;
-		font-size: 30px;
-		color: white;
-		position: fixed;
-		top: 10px;
-		right: 30px;
-		z-index: 1;
-		cursor: pointer;
+	.subhead {
+		font-size: 2.5em;
+		letter-spacing: 14px;
+ 	}
 
-		-webkit-transition: all 0.5s ease-out 0;
-		-moz-transition: all 0.5s ease-out 0;
-		transition: all 0.5s ease-out 0; 
+}
+
+/* Largest screen breakpoint (1360px) */
+@media (min-width: 85rem) {
+
+	/* Text Styles */
+
+	.section-header {
+		letter-spacing: 16px;
 	}
 
-	.toggle-close {
-		text-decoration: none;
-		font-size: 30px;
-		color: white;
-		position: fixed;
-		top: 10px;
-		left: 30px;
-		z-index: 1;
-		cursor: pointer;
-
-		-webkit-transition: all 0.25s ease-out 0;
-		-moz-transition: all 0.25s ease-out 0;
-		transition: all 0.25s ease-out 0; 
-	}
-
-	.sidebar {
-		position: fixed;
-		top: 0px;
-		bottom: 0px;
-		right: -50%;
-		width: 50%;
-		padding: 30px;
-		background: #fff;
-		z-index: 0;
-
-		-webkit-transition: all 0.25s ease-out 0;
-		-moz-transition: all 0.25s ease-out 0;
-		transition: all 0.25s ease-out 0; 
-	}
-
-	#sidebartoggler, #sidebartoggler-close {
-		display: none; }
-	#sidebartoggler:checked + .container .sidebar {
-		right: 0; }
-	#sidebartoggler:checked + .container .toggle {
-		display: none; }
+	.subhead {
+		font-size: 3em;
+		letter-spacing: 26px;
+		margin-top: -.3em;
+ 	}	
+	
 }
 
 /*
